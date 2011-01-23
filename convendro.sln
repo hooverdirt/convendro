@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "convendro", "convendro\convendro.csproj", "{472FB879-DA4A-499E-9C91-A5ECE69C2CBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libconvendro", "libconvendro\libconvendro.csproj", "{E12BADBA-2B43-4F6C-AED7-CB7B6D250023}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "TestPlugin\TestPlugin.csproj", "{16E3709C-02CD-4BF3-AC8E-08D593742752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaInfoPlugin", "MediaInfoPlugin\MediaInfoPlugin.csproj", "{6BD9C62C-8CD2-4545-883A-EF7641C0BB8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{472FB879-DA4A-499E-9C91-A5ECE69C2CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{472FB879-DA4A-499E-9C91-A5ECE69C2CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{472FB879-DA4A-499E-9C91-A5ECE69C2CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{472FB879-DA4A-499E-9C91-A5ECE69C2CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E12BADBA-2B43-4F6C-AED7-CB7B6D250023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E12BADBA-2B43-4F6C-AED7-CB7B6D250023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E12BADBA-2B43-4F6C-AED7-CB7B6D250023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E12BADBA-2B43-4F6C-AED7-CB7B6D250023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16E3709C-02CD-4BF3-AC8E-08D593742752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16E3709C-02CD-4BF3-AC8E-08D593742752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16E3709C-02CD-4BF3-AC8E-08D593742752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16E3709C-02CD-4BF3-AC8E-08D593742752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BD9C62C-8CD2-4545-883A-EF7641C0BB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BD9C62C-8CD2-4545-883A-EF7641C0BB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BD9C62C-8CD2-4545-883A-EF7641C0BB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BD9C62C-8CD2-4545-883A-EF7641C0BB8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

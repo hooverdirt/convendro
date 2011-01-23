@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PresetsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Presets>
+    <Preset>
+      <UsedCount>0</UsedCount>
+      <LastUsed>0001-01-01T00:00:00</LastUsed>
+      <Name>Test only</Name>
+      <Category>iPod Touch</Category>
+      <Description>This is teh one you needs</Description>
+      <OutputFolder>C:\Users\arthur\Videos\</OutputFolder>
+      <Extension>m4v</Extension>
+      <CommandLineOptions>
+        <Items>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>threads</Name>
+            <Value>4</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>s</Name>
+            <Value>640x352</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>r</Name>
+            <Value>25.00</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>vcodec</Name>
+            <Value>h264</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>g</Name>
+            <Value>300</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>bufsize</Name>
+            <Value>4194304</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>aspect</Name>
+            <Value>640:352</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>qmin</Name>
+            <Value>23</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>b</Name>
+            <Value>786</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>level</Name>
+            <Value>30</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>loop</Name>
+            <Value>1</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>sc_threshold</Name>
+            <Value>40</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>partp4x4</Name>
+            <Value>1</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>refs</Name>
+            <Value>2</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>qmax</Name>
+            <Value>51</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>maxrate</Name>
+            <Value>1024</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>async</Name>
+            <Value>50</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>acodec</Name>
+            <Value>aac</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>ar</Name>
+            <Value>44100</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>ac</Name>
+            <Value>2</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator />
+            <Name>ab</Name>
+            <Value>48</Value>
+          </CommandOption>
+        </Items>
+      </CommandLineOptions>
+    </Preset>
+    <Preset>
+      <UsedCount>0</UsedCount>
+      <LastUsed>0001-01-01T00:00:00</LastUsed>
+      <Name>Medium Quality</Name>
+      <Category>iPod Touch</Category>
+      <Description>700 KBits</Description>
+      <OutputFolder>C:\Users\arthur\Videos\</OutputFolder>
+      <Extension>m4v</Extension>
+      <CommandLineOptions>
+        <Items>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator> </ValueSeparator>
+            <Name>acodec</Name>
+            <Value>libfaac</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator> </ValueSeparator>
+            <Name>ab</Name>
+            <Value>128k</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator> </ValueSeparator>
+            <Name>s</Name>
+            <Value>640x480</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator> </ValueSeparator>
+            <Name>vcodec</Name>
+            <Value>libx264</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator> </ValueSeparator>
+            <Name>b</Name>
+            <Value>700</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator> </ValueSeparator>
+            <Name>bt</Name>
+            <Value>700</Value>
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator> </ValueSeparator>
+            <Name>y</Name>
+            <Value />
+          </CommandOption>
+          <CommandOption>
+            <ArgumentSeparator>-</ArgumentSeparator>
+            <ValueSeparator> </ValueSeparator>
+            <Name>threads</Name>
+            <Value>2</Value>
+          </CommandOption>
+        </Items>
+      </CommandLineOptions>
+    </Preset>
+  </Presets>
+</PresetsFile>

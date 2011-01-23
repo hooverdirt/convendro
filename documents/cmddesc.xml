@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DescriptionFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Items>
+    <DescriptionItem>
+      <Name>L</Name>
+      <Description>Show license</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>h</Name>
+      <Description>Show Help</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>version</Name>
+      <Description>Show version</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>formats</Name>
+      <Description>Show formats</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>f</Name>
+      <Description>force format</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>i</Name>
+      <Description>input file name</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>y</Name>
+      <Description>overwrite output files</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>t</Name>
+      <Description>record or transcode "duration" seconds of audio/video</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>fs</Name>
+      <Description>set the limit file size in bytes</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>ss</Name>
+      <Description>set the start time offset</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>itsoffset</Name>
+      <Description>set the start time offset</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>itsscale</Name>
+      <Description>set the input ts scale</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>title</Name>
+      <Description>set the title</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>timestamp</Name>
+      <Description>set the timestamp</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>author</Name>
+      <Description>set the author</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>copyright</Name>
+      <Description>set the copyright</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>comment</Name>
+      <Description>set the comment</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>genre</Name>
+      <Description>set the genre</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>album</Name>
+      <Description>set the album</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>dframes</Name>
+      <Description>set the number of data frames to record</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>v</Name>
+      <Description>set the logging verbosity level</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>target</Name>
+      <Description>specify target file type</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>map</Name>
+      <Description>set input stream mapping</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>map_meta_data</Name>
+      <Description>set meta data information for outfile</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>benchmark</Name>
+      <Description>add timings for benchmarking</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>dump</Name>
+      <Description>dump each input packet</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>hex</Name>
+      <Description>when dumping packets, also dump payload</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>re</Name>
+      <Description>read input at native frame rate</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>loop_input</Name>
+      <Description>loop (currently only works with images)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>threads</Name>
+      <Description>thread count</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vsynch</Name>
+      <Description>video synch method</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>asynch</Name>
+      <Description>audio synch method</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>adrift_treshold</Name>
+      <Description>audio drift threshold</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vglobal</Name>
+      <Description>video global header storage type</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>copyts</Name>
+      <Description>copy timestamps</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>shortest</Name>
+      <Description>finish encoding within shortest input</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>dts_delta_threshold</Name>
+      <Description>timestamp discontinuity delta threshold</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>programid</Name>
+      <Description>desired program number</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>muxdelay</Name>
+      <Description>set the maximum demux-decode delay</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>muxpreload</Name>
+      <Description>set the initial demux-decode delay</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>b</Name>
+      <Description>set bitrate in bits per second</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vb</Name>
+      <Description>set bitrate in bits per second</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>r</Name>
+      <Description>set the frame rate (Hz value, fraction or abbreviation)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vframes</Name>
+      <Description>set the number of videoframes to record</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>s</Name>
+      <Description>set the frame size (WxH or abbreviation)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>aspect</Name>
+      <Description>set the aspect ratio (4:3, 16:9 or 1.3333, 1.7777)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>croptop</Name>
+      <Description>set top crop band size in pixels</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>cropbottom</Name>
+      <Description>set bottom cropband size in pixels</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>cropleft</Name>
+      <Description>set left crop band size in pixels</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>cropright</Name>
+      <Description>set right crop band size in pixels</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>padtop</Name>
+      <Description>set top pad band size</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>padbottom</Name>
+      <Description>set bottom pad band size</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>padright</Name>
+      <Description>set right pad band size</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>padleft</Name>
+      <Description>set left pad band size</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>padcolor</Name>
+      <Description>set pad color (Hex 000000 thru FFFFFF)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vn</Name>
+      <Description>disable video</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vcodec</Name>
+      <Description>force video codec</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>sameq</Name>
+      <Description>use same video quality as source (implies VBR)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>pass</Name>
+      <Description>select the pass number (1 or 2)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>passlogfile</Name>
+      <Description>select two pass log file name</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>newvideo</Name>
+      <Description>add a new video stream to the current output stream</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>pix_fmt</Name>
+      <Description>set pixel format</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>intra</Name>
+      <Description>use only intra frames</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vdt</Name>
+      <Description>discard threshold</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>qscale</Name>
+      <Description>use fixed video quantizer scale (VBR)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>rc_override</Name>
+      <Description>rate control override for specific intervals</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>me_threshold</Name>
+      <Description>motion estimation threshold</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>strict</Name>
+      <Description>how strictly to follow standards</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>deinterlace</Name>
+      <Description>deinterlace pictures</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>psnr</Name>
+      <Description>calculate PSNR of compressed frames</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vstats</Name>
+      <Description>dump video coding statistics to file</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vstats_file</Name>
+      <Description>dump video coding statistics to file</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>intra_matrix</Name>
+      <Description>specify intra matrix coeffs</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>inter_matrix</Name>
+      <Description>specify inter matrix coeffs</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>top</Name>
+      <Description>top=1, bottom=0, auto=-1 field first</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>dc</Name>
+      <Description>intra_dc_precision</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vtag</Name>
+      <Description>force video tag, fourcc</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>qphist</Name>
+      <Description>Show QP histogram</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vbsf</Name>
+      <Description>Bitstream filter</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vpre</Name>
+      <Description>Preset</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>ab</Name>
+      <Description>set audio bitrate</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>aframes</Name>
+      <Description>set the number of audioframes to record</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>aq</Name>
+      <Description>set audio quality (codec-specific)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>ar</Name>
+      <Description>set audio sampling rate</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>ac</Name>
+      <Description>set number of audio channels</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>an</Name>
+      <Description>disable audio</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>acodec</Name>
+      <Description>force audio codec (copy to copy stream)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vol</Name>
+      <Description>change audio volume (256 = normal)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>newaudio</Name>
+      <Description>add a new audiostream to current output stream</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>alang</Name>
+      <Description>set the ISO 639 language code, 3 letters, of the current audio stream</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>atag</Name>
+      <Description>force audio tag, fourcc</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>absf</Name>
+      <Description>audio bistream filter</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>apre</Name>
+      <Description>audio preset</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>sn</Name>
+      <Description>disable subtitle</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>scodec</Name>
+      <Description>force subtitle codec (copy to copy subtitle codec)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>newsubtitle</Name>
+      <Description>add a new subtitle stream to the current output stream</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>slang</Name>
+      <Description>set the ISO 639 language code of the current subtitle stream</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>sbsf</Name>
+      <Description>subtitle bitstream filter</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>spre</Name>
+      <Description>subtitle preset</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>vc</Name>
+      <Description>set video grab channel</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>tvstd</Name>
+      <Description>set tv standard NTSC, PAL (SECAM)</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>isync</Name>
+      <Description>synch read on input</Description>
+    </DescriptionItem>
+    <DescriptionItem>
+      <Name>flags</Name>
+      <Description>set flags</Description>
+    </DescriptionItem>
+  </Items>
+</DescriptionFile>
