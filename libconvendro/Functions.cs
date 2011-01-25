@@ -103,6 +103,15 @@ namespace libconvendro
         public const string WINFF_NODE_EXTENSION = "extension";
         public const string WINFF_NODE_CATEGORY = "category";
 
+        // IConvendroHost/mainFomr constants.
+        public const int SUBCOL_FILENAME = 0;
+        public const int SUBCOL_PATH = 1;
+        public const int SUBCOL_SIZE = 2;
+        public const int SUBCOL_PRESETNAME = 3;
+        public const int SUBCOL_DURATION = 4;
+        public const int SUBCOL_STARTED = 5;
+        public const int SUBCOL_FINISHED = 6;
+
         // Shell32 constants...
         private const int SW_SHOW = 5;
         private const uint SEE_MASK_INVOKEIDLIST = 12;

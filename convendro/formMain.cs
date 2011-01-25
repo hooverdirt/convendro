@@ -27,15 +27,6 @@ namespace convendro {
         private ManualResetEvent threadHasStoppedEvent = new ManualResetEvent(false);
         private PluginManager pluginManager = null;
 
-
-        public const int SUBCOL_FILENAME = 0;
-        public const int SUBCOL_PATH = 1;
-        public const int SUBCOL_SIZE = 2;
-        public const int SUBCOL_PRESETNAME = 3;
-        public const int SUBCOL_DURATION = 4;
-        public const int SUBCOL_STARTED = 5;
-        public const int SUBCOL_FINISHED = 6;
-
         public frmMain() {
             InitializeComponent();
         }
@@ -238,7 +229,7 @@ namespace convendro {
 
                     if (npreset != null) {
                         foreach (ListViewItem it in listViewFiles.SelectedItems) {
-                            it.SubItems[SUBCOL_PRESETNAME].Text = npreset.Name;
+                            it.SubItems[Functions.SUBCOL_PRESETNAME].Text = npreset.Name;
                         }
                     }
                 }
@@ -469,13 +460,13 @@ namespace convendro {
         private void buildMediaFileList() {
             this.mediafilelist.Clear();
             foreach (ListViewItem n in listViewFiles.Items) {
-                string filename = Path.Combine(n.SubItems[SUBCOL_PATH].Text, n.SubItems[SUBCOL_FILENAME].Text);
-                Preset preset = presetdata.FindPreset(n.SubItems[SUBCOL_PRESETNAME].Text);
+                string filename = Path.Combine(n.SubItems[Functions.SUBCOL_PATH].Text, n.SubItems[Functions.SUBCOL_FILENAME].Text);
+                Preset preset = presetdata.FindPreset(n.SubItems[Functions.SUBCOL_PRESETNAME].Text);
                 
                 // reset time stats.
-                n.SubItems[SUBCOL_STARTED].Text = "";
-                n.SubItems[SUBCOL_FINISHED].Text = "";
-                n.SubItems[SUBCOL_DURATION].Text = "";
+                n.SubItems[Functions.SUBCOL_STARTED].Text = "";
+                n.SubItems[Functions.SUBCOL_FINISHED].Text = "";
+                n.SubItems[Functions.SUBCOL_DURATION].Text = "";
 
                 if (preset != null) {
                     this.mediafilelist.AddMediaFile(filename, preset, n.Index);
@@ -603,7 +594,7 @@ namespace convendro {
                     if (res == DialogResult.OK) {
                         if (nform.CurrentPreset != null) {
                             foreach (ListViewItem i in this.listViewFiles.SelectedItems) {
-                                i.SubItems[SUBCOL_PRESETNAME].Text = nform.CurrentPreset.Name;
+                                i.SubItems[Functions.SUBCOL_PRESETNAME].Text = nform.CurrentPreset.Name;
                                 nform.CurrentPreset.LastUsed = DateTime.Now;
                                 nform.CurrentPreset.UsedCount += 1;
                             }
@@ -634,8 +625,8 @@ namespace convendro {
         private void mediafilesPropertiesToolStripMenuItem_Click(object sender, EventArgs e) {
             if (listViewFiles.SelectedItems.Count > 0) {
                 Functions.ShowPropertiesWindow(
-                    Path.Combine(listViewFiles.SelectedItems[0].SubItems[SUBCOL_PATH].Text,
-                    listViewFiles.SelectedItems[0].SubItems[SUBCOL_FILENAME].Text));
+                    Path.Combine(listViewFiles.SelectedItems[0].SubItems[Functions.SUBCOL_PATH].Text,
+                    listViewFiles.SelectedItems[0].SubItems[Functions.SUBCOL_FILENAME].Text));
             }
         }
 
@@ -874,7 +865,7 @@ namespace convendro {
             testRunToolStripMenuItem.Enabled =
                 (listViewFiles.Items.Count > 0) &&
                 (listViewFiles.SelectedItems.Count == 1) &&
-                (listViewFiles.SelectedItems[0].SubItems[SUBCOL_PRESETNAME].Text != "");
+                (listViewFiles.SelectedItems[0].SubItems[Functions.SUBCOL_PRESETNAME].Text != "");
         }
 
         /// <summary>
@@ -886,8 +877,8 @@ namespace convendro {
             MediaFileList newlist = new MediaFileList();
 
             foreach (ListViewItem n in listViewFiles.SelectedItems) {
-                string filename = Path.Combine(n.SubItems[SUBCOL_PATH].Text, n.SubItems[SUBCOL_FILENAME].Text);
-                Preset preset = presetdata.FindPreset(n.SubItems[SUBCOL_PRESETNAME].Text);
+                string filename = Path.Combine(n.SubItems[Functions.SUBCOL_PATH].Text, n.SubItems[Functions.SUBCOL_FILENAME].Text);
+                Preset preset = presetdata.FindPreset(n.SubItems[Functions.SUBCOL_PRESETNAME].Text);
 
                 if (preset != null) {
                     newlist.AddMediaFile(filename, preset, n.Index);
@@ -1049,7 +1040,7 @@ namespace convendro {
         private void mediafilesExploreSourceFolderToolStripMenuItem_Click(object sender, EventArgs e) {
             if (listViewFiles.SelectedItems.Count > 0) {
                 foreach (ListViewItem i in listViewFiles.SelectedItems) {
-                    Functions.ShowFolderExplorer(i.SubItems[SUBCOL_PATH].Text);
+                    Functions.ShowFolderExplorer(i.SubItems[Functions.SUBCOL_PATH].Text);
                 }
             }
 
@@ -1063,8 +1054,8 @@ namespace convendro {
         private void mediafilesExploreTargetFolderToolStripMenuItem_Click(object sender, EventArgs e) {
             if (listViewFiles.SelectedItems.Count > 0) {
                 foreach (ListViewItem i in listViewFiles.SelectedItems) {
-                    if (!String.IsNullOrEmpty(i.SubItems[SUBCOL_PRESETNAME].Text)) {
-                        Preset n = presetdata.FindPreset(i.SubItems[SUBCOL_PRESETNAME].Text);
+                    if (!String.IsNullOrEmpty(i.SubItems[Functions.SUBCOL_PRESETNAME].Text)) {
+                        Preset n = presetdata.FindPreset(i.SubItems[Functions.SUBCOL_PRESETNAME].Text);
                         if (n != null) {
                             Functions.ShowFolderExplorer(n.OutputFolder);
                         }
@@ -1120,8 +1111,8 @@ namespace convendro {
 
                 for (int i = 0; i < this.listViewFiles.SelectedItems.Count; i++) {
                     array[i] = Path.Combine(
-                        this.listViewFiles.SelectedItems[i].SubItems[SUBCOL_PATH].Text,
-                        this.listViewFiles.SelectedItems[i].SubItems[SUBCOL_FILENAME].Text);
+                        this.listViewFiles.SelectedItems[i].SubItems[Functions.SUBCOL_PATH].Text,
+                        this.listViewFiles.SelectedItems[i].SubItems[Functions.SUBCOL_FILENAME].Text);
                 }
 
                 return array;
@@ -1150,7 +1141,7 @@ namespace convendro {
 
             if (listViewFiles.Items.Count > 0) {
                 ListViewItem i = listViewFiles.Items[index];
-                preset = i.SubItems[SUBCOL_PRESETNAME].Text;
+                preset = i.SubItems[Functions.SUBCOL_PRESETNAME].Text;
             }
 
             return preset;
@@ -1165,7 +1156,7 @@ namespace convendro {
             if (presetdata.FindPresetIndex(presetname) > -1) {
                 if (listViewFiles.Items.Count > 0 && index >= 0
                     && index < listViewFiles.Items.Count) {
-                    listViewFiles.Items[index].SubItems[SUBCOL_PRESETNAME].Text = presetname;
+                    listViewFiles.Items[index].SubItems[Functions.SUBCOL_PRESETNAME].Text = presetname;
                 }
             }
         }
