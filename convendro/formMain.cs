@@ -946,9 +946,14 @@ namespace convendro {
                         int oldcount = this.presetdata.Presets.Count;
                         this.presetdata.AddPresets(animporter.Presets);
                         if (this.presetdata.Presets.Count > oldcount) {
+                            // actually save the presets...
+                            Functions.SerializePresetsData(
+                                Config.Settings.LastUsedPresetFile,
+                                this.presetdata);
                             MessageBox.Show(String.Format("{0} files were imported...",
                                 (this.presetdata.Presets.Count - oldcount)));
                         }
+
                     }
                 }
             } finally {
