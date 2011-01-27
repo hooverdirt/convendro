@@ -13,14 +13,6 @@ namespace libconvendro.Threading {
     /// 
     /// </summary>
     public class FFMPEGConverter : BaseProcessConverter{
-        public const int SUBCOL_FILENAME = 0;
-        public const int SUBCOL_PATH = 1;
-        public const int SUBCOL_SIZE = 2;
-        public const int SUBCOL_PRESETNAME = 3;
-        public const int SUBCOL_DURATION = 4;
-        public const int SUBCOL_STARTED = 5;
-        public const int SUBCOL_FINISHED = 6;
-
         private float fileduration = 0.00F;
         private DateTime currentdate;
         private ManualResetEvent stopThread;
@@ -173,13 +165,13 @@ namespace libconvendro.Threading {
                 } else {
                     if (amediafile != null) {
                         TimeSpan atimespan = amediafile.DateFinished.Subtract(amediafile.DateStarted);
-                        (this.Form as IThreadingHost).FileListView.Items[amediafile.Order].SubItems[SUBCOL_DURATION].Text =
+                        (this.Form as IThreadingHost).FileListView.Items[amediafile.Order].SubItems[Functions.SUBCOL_DURATION].Text =
                             String.Format(Functions.TIMEFORMAT_HHMMSS,
                             atimespan.Hours, atimespan.Minutes, atimespan.Seconds);
-                        (this.Form as IThreadingHost).FileListView.Items[amediafile.Order].SubItems[SUBCOL_STARTED].Text =
+                        (this.Form as IThreadingHost).FileListView.Items[amediafile.Order].SubItems[Functions.SUBCOL_STARTED].Text =
                             String.Format(Functions.TIMEFORMAT_HHMMSS,
                             amediafile.DateStarted.Hour, amediafile.DateStarted.Minute, amediafile.DateStarted.Second);
-                        (this.Form as IThreadingHost).FileListView.Items[amediafile.Order].SubItems[SUBCOL_FINISHED].Text =
+                        (this.Form as IThreadingHost).FileListView.Items[amediafile.Order].SubItems[Functions.SUBCOL_FINISHED].Text =
                             String.Format(Functions.TIMEFORMAT_HHMMSS,
                             amediafile.DateFinished.Hour, amediafile.DateFinished.Minute, amediafile.DateFinished.Second);
 

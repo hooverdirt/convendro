@@ -418,11 +418,22 @@ namespace convendro {
                         Functions.CreateBackupFile(Config.Settings.LastUsedPresetFile);
                     }
 
-                    Functions.SerializePresetsData(
+                    bool b = Functions.SerializePresetsData(
                         Config.Settings.LastUsedPresetFile,
                         this.presetdata);
 
+                    if (b == false) {
+                        // I could throw it but...
+                        DialogResult a = MessageBox.Show("Do you want your stuff restored?", "Convendro", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                        if (a == DialogResult.Yes) {
+                            Functions.RestoreBackupFile(Config.Settings.LastUsedPresetFile);
+                        }
+
+                    }
+
                 }
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Convendro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } finally {
                 // Save commandline descriptions...
                 nform.SaveDescriptionSettings(Config.Settings.LastUsedCommandDescriptionFile);
@@ -605,8 +616,16 @@ namespace convendro {
                             Functions.CreateBackupFile(Config.Settings.LastUsedPresetFile);
                         }
 
-                        Functions.SerializePresetsData(Config.Settings.LastUsedPresetFile, 
+                        bool b = Functions.SerializePresetsData(Config.Settings.LastUsedPresetFile, 
                             this.presetdata);
+
+                        if (b == false) {
+                            DialogResult a = MessageBox.Show("Do you want your stuff restored?", "Convendro", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                            if (a == DialogResult.Yes) {
+                                Functions.RestoreBackupFile(Config.Settings.LastUsedPresetFile);
+                            }
+
+                        }
                     }
                 } finally {
                     // Save commandline descriptions...

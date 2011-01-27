@@ -172,6 +172,47 @@ namespace libconvendro
         }
 
         /// <summary>
+        /// Restores last backup file on creation date
+        /// </summary>
+        /// <returns></returns>
+        public static bool RestoreBackupFile(string filename) {
+            bool res = false;
+            DateTime comparedatetime = DateTime.MinValue;
+            FileInfo savedinfo = null;
+
+            string actfile = Path.GetFileNameWithoutExtension(filename);
+            string actpath = Path.GetDirectoryName(filename);
+
+            string[] files = Directory.GetFiles(actpath, actfile + "*.bak", SearchOption.TopDirectoryOnly);
+
+            if (files.Length > 0) {
+
+                foreach (string afile in files) {
+
+                    FileInfo info = new FileInfo(afile);
+
+                    if (comparedatetime.CompareTo(info.CreationTime) < 0) {
+                        savedinfo = info;
+                        comparedatetime = info.CreationTime;
+                    }
+                    Application.DoEvents();
+                }
+            }
+
+            if (savedinfo != null) {
+                try {
+                    File.Copy(savedinfo.FullName, filename, true);
+                    res = true;
+                } catch (Exception ex) {
+                    res = false;
+                }
+                
+            }
+
+            return res;
+        }
+
+        /// <summary>
         /// Cleanup backup files.
         /// </summary>
         /// <param name="path"></param>
