@@ -422,13 +422,16 @@ namespace convendro {
                         Config.Settings.LastUsedPresetFile,
                         this.presetdata);
 
-                    if (b == false) {
+                    if (b == false && Config.Settings.MakeBackupsXMLFiles) {
                         // I could throw it but...
                         DialogResult a = MessageBox.Show("Do you want your stuff restored?", "Convendro", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                         if (a == DialogResult.Yes) {
-                            Functions.RestoreBackupFile(Config.Settings.LastUsedPresetFile);
+                            // if backup file was loaded...
+                            if (Functions.RestoreBackupFile(Config.Settings.LastUsedPresetFile)) {
+                                this.presetdata = Functions.DeserializePresetsData(
+                                    Config.Settings.LastUsedPresetFile);
+                            }
                         }
-
                     }
 
                 }
@@ -611,21 +614,14 @@ namespace convendro {
                             }
                         }
 
-                        // Save Presetfile.
                         if (Config.Settings.MakeBackupsXMLFiles) {
                             Functions.CreateBackupFile(Config.Settings.LastUsedPresetFile);
                         }
 
-                        bool b = Functions.SerializePresetsData(Config.Settings.LastUsedPresetFile, 
+                        // only save the presets but do not reload the presetdata object,
+                        // as the user may wants to finish this session first.
+                        Functions.SerializePresetsData(Config.Settings.LastUsedPresetFile, 
                             this.presetdata);
-
-                        if (b == false) {
-                            DialogResult a = MessageBox.Show("Do you want your stuff restored?", "Convendro", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                            if (a == DialogResult.Yes) {
-                                Functions.RestoreBackupFile(Config.Settings.LastUsedPresetFile);
-                            }
-
-                        }
                     }
                 } finally {
                     // Save commandline descriptions...
