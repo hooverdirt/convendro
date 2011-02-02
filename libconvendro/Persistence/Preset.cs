@@ -26,7 +26,7 @@ namespace libconvendro.Persistence {
             extension = null;
             timesused = 0;
             dateused = DateTime.MinValue;
-            foldername = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase);
+            foldername = Path.GetDirectoryName(Assembly.GetCallingAssembly().GetName().CodeBase);
             commandlineoptions = new CommandLineOptions();
         }
 

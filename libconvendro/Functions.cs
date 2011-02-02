@@ -388,7 +388,7 @@ namespace libconvendro
         public static string GetCurrentLocalAppPath() {
             return Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                Assembly.GetExecutingAssembly().GetName().Name);
+                Assembly.GetCallingAssembly().GetName().Name);
         }
 
         /// <summary>
