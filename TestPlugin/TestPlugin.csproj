@@ -82,6 +82,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)$(TargetFileName) ..\..\..\convendro\bin\Debug\plugins</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetDir)$(TargetFileName) %25LOCALAPPDATA%25\convendro\plugins\$(TargetFileName)</PostBuildEvent>
   </PropertyGroup>
 </Project>
