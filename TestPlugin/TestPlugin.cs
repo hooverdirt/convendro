@@ -15,6 +15,7 @@ namespace TestPlugin {
             this.CopyrightInformation = "Copyrights 2009 Arthur Hoogervorst";
             this.Description = "A test plugin for convendro";
             this.Caption = "Do a test...";
+            this.ShortcutKeys = Keys.Shift | Keys.Alt | Keys.Y;
             this.Version = new Version("1.0.0.0");
             this.MenuBitmap = Properties.Resources.address_book_new;
             // override default Guid in Baseclass.
