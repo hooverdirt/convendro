@@ -308,7 +308,7 @@ namespace convendro {
             // set the host..
             plugin.Host = this;
             // prepare the plugin
-            this.setupPluginMainMenu(plugin);
+            this.setupPluginMainMenu(plugin as BaseConvendroPlugin);
             this.setupPluginToolBar(plugin);
         }
 
@@ -316,9 +316,11 @@ namespace convendro {
         /// 
         /// </summary>
         /// <param name="plugin"></param>
-        private void setupPluginMainMenu(IConvendroPlugin plugin) {
+        private void setupPluginMainMenu(BaseConvendroPlugin plugin) {
             // use default bitmap where possible.
             Bitmap defaultimage = plugin.MenuBitmap;
+
+            
 
             if (plugin.MenuBitmap == null) {
                 defaultimage = Properties.Resources.plugin;
@@ -331,9 +333,10 @@ namespace convendro {
                     toolsPluginsToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
                 }
 
-                toolsPluginsToolStripMenuItem.DropDownItems.Add(nitem);
                 nitem.Tag = plugin.Guid;
                 nitem.Text = plugin.Caption;
+                nitem.ShortcutKeys = (Keys)plugin.ShortcutKeys;
+                toolsPluginsToolStripMenuItem.DropDownItems.Add(nitem);
                 nitem.Click += new EventHandler(pluginMenuItem_Click);
             } catch (Exception ex) {
                 MessageBox.Show("Error: " + ex.Message);
@@ -1041,7 +1044,7 @@ namespace convendro {
                     }
                     SaveMediaFileList(savefile.FileName);
                     Config.Settings.LastUsedMediaSetFolder = Path.GetDirectoryName(savefile.FileName);
-                }
+                }                
             } finally {
                 savefile.Dispose();
             }

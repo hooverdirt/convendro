@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Reflection;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace libconvendro.Plugins {
     public class BaseConvendroPlugin : IConvendroPlugin{
@@ -14,6 +15,9 @@ namespace libconvendro.Plugins {
         private Version version = null;
         private Bitmap bitmap = null;
         private Guid guid = Guid.NewGuid();
+
+        Keys shortcutKeys = Keys.None;
+
         private IConvendroHost host;
 
         public string Name {
@@ -124,6 +128,23 @@ namespace libconvendro.Plugins {
             set {
                 this.bitmap = value;
             }
+        }
+
+        /// <summary>
+        /// Gets or sets the shortcut keys
+        /// </summary>
+        public Keys ShortcutKeys {
+            get { return this.shortcutKeys; }
+            set { this.setshortcutkeys(value); }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private void setshortcutkeys(Keys value) {
+            this.shortcutKeys = value;
         }
 
         /// <summary>
