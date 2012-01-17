@@ -308,7 +308,7 @@ namespace convendro {
             // set the host..
             plugin.Host = this;
             // prepare the plugin
-            this.setupPluginMainMenu(plugin as BaseConvendroPlugin);
+            this.setupPluginMainMenu(plugin);
             this.setupPluginToolBar(plugin);
         }
 
@@ -316,7 +316,7 @@ namespace convendro {
         /// 
         /// </summary>
         /// <param name="plugin"></param>
-        private void setupPluginMainMenu(BaseConvendroPlugin plugin) {
+        private void setupPluginMainMenu(IConvendroPlugin plugin) {
             // use default bitmap where possible.
             Bitmap defaultimage = plugin.MenuBitmap;
 
@@ -335,7 +335,9 @@ namespace convendro {
 
                 nitem.Tag = plugin.Guid;
                 nitem.Text = plugin.Caption;
-                nitem.ShortcutKeys = (Keys)plugin.ShortcutKeys;
+
+                // do some silly conversion...
+                nitem.ShortcutKeys = (Keys) (plugin as BaseConvendroPlugin).ShortcutKeys;
                 toolsPluginsToolStripMenuItem.DropDownItems.Add(nitem);
                 nitem.Click += new EventHandler(pluginMenuItem_Click);
             } catch (Exception ex) {
