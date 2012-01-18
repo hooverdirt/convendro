@@ -31,8 +31,9 @@
 							<File Id="FFCommandsFile" Name="commands.txt" Source="..\convendro\bin\Debug\commands.txt"/>	
 					</Component>											
 					<Component Id="MyFFMPEG" Guid="F180E41A-6ABC-4498-8C29-848C68847586">
-							<File Id="FFMPEG" Name="ffmpeg.exe" Source="..\convendro\bin\Debug\ffmpeg.exe"/>	
+							<File Id="FFMPEG" Name="ffmpeg.exe" Source="..\thirdparty\ffmpeg\x86\ffmpeg.exe"/>	
 					</Component>
+					<!-- Lib Convendro files -->
 					<Component Id="LibConvendro" Guid="0B2366EA-A9DF-4132-9347-0F6A7B0F758C">
 							<File Id="libconvendro" Name="libconvendro.dll" Source="..\libconvendro\bin\Debug\libconvendro.dll"/>	
 					</Component>				
@@ -56,7 +57,17 @@
 							    Type='string' Value='INSTALLED' KeyPath='yes' />  														    	
 					   	<RemoveFolder Id="LocalAppDataFolder" On="uninstall" />				
 					</Component>
-				</Directory>				
+					<Directory Id="LOCALBINFOLDER" Name="Plugins">
+						<Component Id="MyPlugins" Guid="B6F380E1-209C-4661-8031-463711436A8F" DiskId="1">
+							<File Id="TestPlugin" Name="TestPlugin.dll" Source="..\TestPlugin\bin\Debug\TestPlugin.dll"/>
+							<File Id="MediaInfoPlugin" Name="MediaInfoPlugin.dll" Source="..\MediaInfoPlugin\bin\Debug\MediaInfoPlugin.dll"/>
+							<CreateFolder />
+						<RegistryValue Root='HKCU' Key='SOFTWARE\Convendro\Convendro'  
+							    Type='string' Value='INSTALLED' KeyPath='yes' /> 							
+							<RemoveFolder Id="LOCALBINFOLDER" On="uninstall" />			
+						</Component>
+					</Directory>
+				</Directory>			
 			</Directory>		
 		</DirectoryRef>
 	</Fragment>

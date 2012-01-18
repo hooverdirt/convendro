@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-# SharpDevelop 3.0.0.3775
+# SharpDevelop 4.1.0.8000
 Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "Setup", "Setup.wixproj", "{890F4537-7650-4CE5-BA24-D4B5581C1788}"
 EndProject
 Global

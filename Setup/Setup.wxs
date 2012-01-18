@@ -40,6 +40,14 @@
 				<ComponentRef Id="MyLicenseFile" />
 				<ComponentRef Id="LibConvendro" />
 		</Feature>
+		
+		<Feature Id="Plugins"
+				Title="MyPlugins"
+				Description="Optional test plugins"
+				Level="1"
+				ConfigurableDirectory="INSTALLDIR">
+				<ComponentRef Id="MyPlugins"/>
+		</Feature>
 
 		<Feature Id="FFMPEG"
 		         Title="FFMPEG Binary"
