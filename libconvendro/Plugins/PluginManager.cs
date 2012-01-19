@@ -111,32 +111,36 @@ namespace libconvendro.Plugins {
                 string[] dirinfo = Directory.GetFiles(this.pluginfolder + "\\", "*.dll");            
                 foreach (string sfile in dirinfo) {
                     if (!String.IsNullOrEmpty(sfile)) {
-                        Assembly asm = Assembly.LoadFrom(sfile);
+                        try {
+                            Assembly asm = Assembly.LoadFrom(sfile);
 
-                        Type[] arraytypes = asm.GetTypes();
+                            Type[] arraytypes = asm.GetTypes();
 
-                        foreach (Type atype in arraytypes) {
-                            if (atype != null) {
+                            foreach (Type atype in arraytypes) {
+                                if (atype != null) {
 
-                                try {
-                                    object iobj = Activator.CreateInstance(atype);
-                                    if (iobj != null) {
+                                    try {
+                                        object iobj = Activator.CreateInstance(atype);
+                                        if (iobj != null) {
 
-                                        if (iobj is IConvendroPlugin) {
+                                            if (iobj is IConvendroPlugin) {
 
-                                            plugins.Add((IConvendroPlugin)iobj);
-                                            if (OnPluginLoad != null) {
-                                                OnPluginLoad(this, (IConvendroPlugin)iobj);
+                                                plugins.Add((IConvendroPlugin)iobj);
+                                                if (OnPluginLoad != null) {
+                                                    OnPluginLoad(this, (IConvendroPlugin)iobj);
+                                                }
                                             }
                                         }
+                                    } catch (Exception ex) {
+                                        if (OnPluginManagerError != null) {
+                                            OnPluginManagerError(this, ex);
+                                        }
                                     }
-                                } catch (Exception ex) {
-                                    if (OnPluginManagerError != null) {
-                                        OnPluginManagerError(this, ex);
-                                    }
-                                }
 
+                                }
                             }
+                        } catch (Exception ex) {
+                            // not loadable...
                         }
 
                     }
