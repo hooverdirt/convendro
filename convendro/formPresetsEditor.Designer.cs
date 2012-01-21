@@ -39,6 +39,7 @@
             this.colValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ctxArguments = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyCommandLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteCommandlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.txtDirectory = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.copyCommandLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridArguments)).BeginInit();
@@ -144,8 +144,8 @@
             this.cboPresetname.Size = new System.Drawing.Size(180, 21);
             this.cboPresetname.Sorted = true;
             this.cboPresetname.TabIndex = 0;
-            this.cboPresetname.SelectionChangeCommitted += new System.EventHandler(this.cboPresetname_SelectionChangeCommitted);
             this.cboPresetname.SelectedIndexChanged += new System.EventHandler(this.cboPresetname_SelectedIndexChanged);
+            this.cboPresetname.SelectionChangeCommitted += new System.EventHandler(this.cboPresetname_SelectionChangeCommitted);
             this.cboPresetname.TextUpdate += new System.EventHandler(this.cboPresetname_TextUpdate);
             // 
             // groupBox2
@@ -172,9 +172,10 @@
             this.datagridArguments.Name = "datagridArguments";
             this.datagridArguments.Size = new System.Drawing.Size(336, 110);
             this.datagridArguments.TabIndex = 0;
+            this.datagridArguments.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridArguments_CellEndEdit);
             this.datagridArguments.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.datagridArguments_CellValidating);
-            this.datagridArguments.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.datagridArguments_EditingControlShowing);
             this.datagridArguments.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.datagridArguments_DataError);
+            this.datagridArguments.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.datagridArguments_EditingControlShowing);
             // 
             // colName
             // 
@@ -203,6 +204,13 @@
             this.deleteRowToolStripMenuItem.Text = "Delete Row";
             this.deleteRowToolStripMenuItem.Click += new System.EventHandler(this.deleteRowToolStripMenuItem_Click);
             // 
+            // copyCommandLineToolStripMenuItem
+            // 
+            this.copyCommandLineToolStripMenuItem.Name = "copyCommandLineToolStripMenuItem";
+            this.copyCommandLineToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.copyCommandLineToolStripMenuItem.Text = "Copy Commandline";
+            this.copyCommandLineToolStripMenuItem.Click += new System.EventHandler(this.copyCommandLineToolStripMenuItem_Click);
+            // 
             // pasteCommandlineToolStripMenuItem
             // 
             this.pasteCommandlineToolStripMenuItem.Name = "pasteCommandlineToolStripMenuItem";
@@ -212,13 +220,13 @@
             // 
             // btnOK
             // 
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Location = new System.Drawing.Point(99, 400);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
@@ -249,6 +257,7 @@
             this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescription.Size = new System.Drawing.Size(347, 48);
             this.txtDescription.TabIndex = 0;
+            this.txtDescription.ModifiedChanged += new System.EventHandler(this.txtDescription_ModifiedChanged);
             // 
             // groupBox4
             // 
@@ -318,13 +327,6 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Value";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // copyCommandLineToolStripMenuItem
-            // 
-            this.copyCommandLineToolStripMenuItem.Name = "copyCommandLineToolStripMenuItem";
-            this.copyCommandLineToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.copyCommandLineToolStripMenuItem.Text = "Copy Commandline";
-            this.copyCommandLineToolStripMenuItem.Click += new System.EventHandler(this.copyCommandLineToolStripMenuItem_Click);
             // 
             // frmPresetsEditor
             // 

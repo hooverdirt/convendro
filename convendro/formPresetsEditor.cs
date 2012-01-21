@@ -11,10 +11,6 @@ using libconvendro;
 using convendro.Classes;
 
 namespace convendro {
-    internal enum ScreenState {
-        New,
-        Editing
-    }
     public partial class frmPresetsEditor : Form {
         private PresetsFile presetfile = null;
         private DescriptionFile descriptionfile = new DescriptionFile();
@@ -35,9 +31,21 @@ namespace convendro {
             LoadDescriptionSettings(Config.Settings.LastUsedCommandDescriptionFile);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="afile"></param>
         public frmPresetsEditor(PresetsFile afile) : this() {           
             presetfile = afile;
             this.RefreshData();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Modified {
+            get { return this.modified; }
+            set { this.modified = value; }
         }
 
         /// <summary>
@@ -301,7 +309,7 @@ namespace convendro {
         /// <summary>
         /// Saves the current (edited) preset
         /// </summary>
-        private void saveCurrentPreset() {
+        public void SaveCurrentPreset() {
             this.currentpreset = this.buildPreset();
 
             if (this.currentpreset != null) {
@@ -338,7 +346,7 @@ namespace convendro {
             if (state == Functions.KEY_PRESSED) {
                 this.cloneCurrentPreset();
             } else {
-                this.saveCurrentPreset();
+                this.SaveCurrentPreset();
             }
         }
 
@@ -541,6 +549,52 @@ namespace convendro {
                     Clipboard.SetText(s);
                 }
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void datagridArguments_CellEndEdit(object sender, DataGridViewCellEventArgs e) {
+            modified = true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnOK_Click(object sender, EventArgs e) {
+            // modified...
+            if (this.Modified) {
+                DialogResult res2 = MessageBox.Show("The current preset has been modified. Do you want to save the changes?",
+                    "convendro", MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Warning);
+
+                switch (res2) {
+                    case DialogResult.Yes:
+                        this.SaveCurrentPreset();
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                        break;
+                    case DialogResult.No :
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                        break;
+                    case DialogResult.Cancel :
+                        this.DialogResult = DialogResult.None;
+                        break;
+                }
+
+            } else {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        private void txtDescription_ModifiedChanged(object sender, EventArgs e) {
+            this.modified = txtDescription.Modified;
         }
 
     }
