@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+   <?if $(var.Platform)=x64 ?>
+	  <?define PlatFormPC = "x64" ?>
+    <?else ?>
+	   <?define PlatFormPC = "x86" ?>
+	<?endif ?>	
 	<Fragment>
 		<DirectoryRef Id="TARGETDIR">
 			<Directory Id="ProgramFilesFolder" Name="PFiles">
@@ -60,7 +65,7 @@
 					<Directory Id="LOCALBINFOLDER" Name="Plugins">
 						<Component Id="MyPlugins" Guid="B6F380E1-209C-4661-8031-463711436A8F" DiskId="1">
 							<File Id="TestPlugin" Name="TestPlugin.dll" Source="..\TestPlugin\bin\Debug\TestPlugin.dll"/>
-							<File Id="MediaInfoPlugin" Name="MediaInfoPlugin.dll" Source="..\MediaInfoPlugin\bin\Debug\MediaInfoPlugin.dll"/>
+							<File Id="MediaInfoPlugin" Name="MediaInfoPlugin.dll" Source="..\thirdparty\MediaInfo\$(var.PlatFormPC)\MediaInfo.dll"/>
 							<CreateFolder />
 						<RegistryValue Root='HKCU' Key='SOFTWARE\Convendro\Convendro'  
 							    Type='string' Value='INSTALLED' KeyPath='yes' /> 							
