@@ -1,0 +1,95 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<!-- setup macro definitions -->
+
+	<Product Id="*"
+		Name="Convendro"
+		Language="1033"
+		Version="0.5.0.0"		        
+		UpgradeCode="2CDAE322-C150-448F-BCEB-9054543FCD66"	     
+		Manufacturer="Arthur Hoogervorst">
+		
+		<Package Description="#Description"
+			Comments="This MSI package installs Convendro for x64"
+			InstallerVersion="200"
+		    Manufacturer="Arthur Hoogervorst" 
+		    Keywords="Convendro, ffmpeg, .Net Framework 2.0, GPL"
+			Compressed="yes"/>
+		<!--
+			Source media for the installation. 
+ 			Specifies a single cab file to be embedded in the installer's .msi. 
+		-->
+		<Media Id="1" Cabinet="contents.cab" EmbedCab="yes" CompressionLevel="high"/>
+	   	  <Property Id="ARPCOMMENTS" Value="An FFMPEG front-End" />
+		  <Property Id="ARPCONTACT" Value="Arthur Hoogervorst" />
+		  <Property Id="ARPPRODUCTICON" Value="MainIcon.ico" />
+		  <Property Id="ARPHELPLINK" Value="http://convendro.googlecode.com" />
+		  <Property Id="ARPSIZE" Value="13000" />
+		
+		  <Icon Id="MainIcon.ico" SourceFile="..\..\convendro\bin\Debug\convendro.exe" />		
+		
+		<!-- Installation directory and files are defined in Files.wxs -->
+		<Directory Id="TARGETDIR" Name="SourceDir"/>
+		
+		
+		<Feature Id="Complete"
+		         Title="Convendro"
+		         Description="An FFMPEG frontend"		       
+		         Level="1"
+		         ConfigurableDirectory="INSTALLDIR">
+		        <ComponentRef Id="MyConvendro" />
+				<ComponentRef Id="MyDataFiles" />
+				<ComponentRef Id="MyLicenseFile" />
+				<ComponentRef Id="LibConvendro" />
+		</Feature>
+		
+		<Feature Id="Plugins"
+				Title="MyPlugins"
+				Description="Optional test plugins"
+				Level="1"
+				ConfigurableDirectory="INSTALLDIR">
+				<ComponentRef Id="MyPlugins"/>
+		</Feature>
+
+		<Feature Id="FFMPEG"
+		         Title="FFMPEG Binary"
+		         Description="FFMPEG executable (SVN)"
+		         Level="1"
+		         ConfigurableDirectory="INSTALLDIR">
+		         <ComponentRef Id="MyFFMPEG"/>
+			 	 <ComponentRef Id="MyFormatsFile"/>		
+				 <ComponentRef Id="MyFFCommandsFile"/>		
+		</Feature>		
+		
+		<!-- 
+			Using the Wix UI library
+ 
+			WixUI_Mondo includes the full set of dialogs:
+ 			
+			welcome
+			license agreement
+			setup type (typical, custom, and complete)
+			feature customization
+			directory browse
+			disk cost. 
+
+			Maintenance-mode dialogs are also included. 
+
+			Use WixUI_Mondo when you have some of your product's features 
+			are not installed by default and there is a meaningful 
+			difference between typical and complete installs
+		-->
+		<UI>
+			<UIRef Id="WixUI_Mondo"/>	
+				<Publish Dialog="ExitDialog"
+		    		Control="Finish" 
+		    		Event="DoAction" 
+		    		Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed
+				</Publish>
+		</UI>		
+		<!-- set launch options... -->
+		<Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Convendro" />
+		<Property Id="WixShellExecTarget" Value="[#Convendro]" />
+		<CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />					
+	</Product>
+</Wix>

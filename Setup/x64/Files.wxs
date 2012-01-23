@@ -1,0 +1,79 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+   <?if $(var.Platform)=x64 ?>
+	  <?define PlatFormPC = "x64" ?>
+    <?else ?>
+	   <?define PlatFormPC = "x86" ?>
+	<?endif ?>	
+	<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="Convendro">
+					<Component Id="MyConvendro" Guid="E2E1B1C4-21FC-45B5-8C8A-DB6D5D98467D" DiskId="1">
+						<File Id="Convendro" Name="convendro.exe" Source="..\..\convendro\bin\Debug\convendro.exe">
+	                    	<Shortcut Id='startmenuConvendro' Directory='ProgramMenuDir' Name='Convendro'
+						         WorkingDirectory='INSTALLDIR' Icon='Convendro.exe' Show="normal" Advertise="yes">
+								<Icon Id="Convendro.exe"  SourceFile="..\..\convendro\bin\Debug\convendro.exe" />
+							</Shortcut>
+						</File>
+					    <RemoveFolder Id="DeleteShortCutFolder"
+					         Directory="ProgramMenuDir" On="uninstall" />					
+					</Component>
+
+					<Component Id ="MyLicenseFile" Guid="71BA3E3D-B59B-41C8-A58D-1A4BB6D175D6" DiskId="1">
+						<File Id="LicenseFile" Name="license.rtf" Source="license.rtf">
+	                    	<Shortcut Id='startmenuLicenseFile' Directory='ProgramMenuDir' Name='LicenseFile' 
+						         WorkingDirectory='INSTALLDIR' Show="normal" Advertise="yes">
+							</Shortcut>						
+						</File>
+					</Component>
+					
+					<!-- FFMPEG files -->
+					<Component Id="MyFormatsFile" Guid="466DC831-73CF-4DFB-93CC-E58BB058119A" DiskId="1">
+							<File Id="FormatsFile" Name="Formats.txt" Source="..\..\convendro\bin\Debug\formats.txt"/>					
+					</Component>
+					<Component Id="MyFFCommandsFile" Guid="EAFCC346-2057-40F3-BC8E-75580A7877F3" DiskId="1">
+							<File Id="FFCommandsFile" Name="commands.txt" Source="..\..\convendro\bin\Debug\commands.txt"/>	
+					</Component>											
+					<Component Id="MyFFMPEG" Guid="F180E41A-6ABC-4498-8C29-848C68847586">
+							<File Id="FFMPEG" Name="ffmpeg.exe" Source="..\..\thirdparty\ffmpeg\x86\ffmpeg.exe"/>	
+					</Component>
+					<!-- Lib Convendro files -->
+					<Component Id="LibConvendro" Guid="0B2366EA-A9DF-4132-9347-0F6A7B0F758C">
+							<File Id="libconvendro" Name="libconvendro.dll" Source="..\..\libconvendro\bin\Debug\libconvendro.dll"/>	
+					</Component>				
+				</Directory>
+				
+	            <Directory Id='ProgramMenuFolder' Name='PMenu'>
+	                <Directory Id='ProgramMenuDir' Name='Convendro' />
+	            </Directory>	            
+	            <Directory Id='DesktopFolder' Name='Desktop' />			
+			</Directory>
+			
+			<!-- Data directory -->			
+			<Directory Id="LocalAppDataFolder" Name="LocalFiles">
+				<Directory Id="LOCALAPPFOLDER" Name="Convendro">
+				    <Component Id="MyDataFiles" Guid="C0EAC254-0185-458B-98DD-DABFD8ABB2F1" DiskId="1">
+						<File Id="MyReadmeFile" Name="ReadMe.txt" Source="..\..\convendro\bin\Debug\ReadMe.txt" />						
+						<File Id="CommandsFile" Name="cmddesc.xml" Source="..\..\convendro\bin\Debug\cmddesc.xml"/>
+						<File Id="PresetsFile" Name="presetsdata.xml" Source="..\..\convendro\bin\Debug\presetsdata.xml"/>			
+				    	<CreateFolder />
+						<RegistryValue Root='HKCU' Key='SOFTWARE\Convendro\Convendro'  
+							    Type='string' Value='INSTALLED' KeyPath='yes' />  														    	
+					   	<RemoveFolder Id="LocalAppDataFolder" On="uninstall" />				
+					</Component>
+					<Directory Id="LOCALBINFOLDER" Name="Plugins">
+						<Component Id="MyPlugins" Guid="B6F380E1-209C-4661-8031-463711436A8F" DiskId="1">
+							<File Id="TestPlugin" Name="TestPlugin.dll" Source="..\..\TestPlugin\bin\Debug\TestPlugin.dll"/>
+							<File Id="MediaInfoPlugin" Name="MediaInfoPlugin.dll" Source="..\..\thirdparty\MediaInfo\x64\MediaInfo.dll"/>
+							<CreateFolder />
+						<RegistryValue Root='HKCU' Key='SOFTWARE\Convendro\Convendro'  
+							    Type='string' Value='INSTALLED' KeyPath='yes' /> 							
+							<RemoveFolder Id="LOCALBINFOLDER" On="uninstall" />			
+						</Component>
+					</Directory>
+				</Directory>			
+			</Directory>		
+		</DirectoryRef>
+	</Fragment>
+</Wix>

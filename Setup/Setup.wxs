@@ -10,7 +10,7 @@
 		Manufacturer="Arthur Hoogervorst">
 		
 		<Package Description="#Description"
-			Comments="This MSI package installs Convendro"
+			Comments="This MSI package installs Convendro for X86"
 			InstallerVersion="200"
 		    Manufacturer="Arthur Hoogervorst" 
 		    Keywords="Convendro, ffmpeg, .Net Framework 2.0, GPL"

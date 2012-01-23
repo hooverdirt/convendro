@@ -65,7 +65,7 @@
 					<Directory Id="LOCALBINFOLDER" Name="Plugins">
 						<Component Id="MyPlugins" Guid="B6F380E1-209C-4661-8031-463711436A8F" DiskId="1">
 							<File Id="TestPlugin" Name="TestPlugin.dll" Source="..\TestPlugin\bin\Debug\TestPlugin.dll"/>
-							<File Id="MediaInfoPlugin" Name="MediaInfoPlugin.dll" Source="..\thirdparty\MediaInfo\$(var.PlatFormPC)\MediaInfo.dll"/>
+							<File Id="MediaInfoPlugin" Name="MediaInfoPlugin.dll" Source="..\thirdparty\MediaInfo\x86\MediaInfo.dll"/>
 							<CreateFolder />
 						<RegistryValue Root='HKCU' Key='SOFTWARE\Convendro\Convendro'  
 							    Type='string' Value='INSTALLED' KeyPath='yes' /> 							
