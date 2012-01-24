@@ -27,6 +27,7 @@
     <DebugType>None</DebugType>
     <Optimize>True</Optimize>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x64' " />
   <Import Project="$(WixToolPath)\wix.targets" />
   <ItemGroup>
     <WixExtension Include="$(WixToolPath)\WixUIExtension.dll" />

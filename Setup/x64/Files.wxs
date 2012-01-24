@@ -7,7 +7,7 @@
 	<?endif ?>	
 	<Fragment>
 		<DirectoryRef Id="TARGETDIR">
-			<Directory Id="ProgramFilesFolder" Name="PFiles">
+			<Directory Id="ProgramFiles64Folder" Name="PFiles">
 				<Directory Id="INSTALLDIR" Name="Convendro">
 					<Component Id="MyConvendro" Guid="E2E1B1C4-21FC-45B5-8C8A-DB6D5D98467D" DiskId="1">
 						<File Id="Convendro" Name="convendro.exe" Source="..\..\convendro\bin\Debug\convendro.exe">
@@ -65,7 +65,8 @@
 					<Directory Id="LOCALBINFOLDER" Name="Plugins">
 						<Component Id="MyPlugins" Guid="B6F380E1-209C-4661-8031-463711436A8F" DiskId="1">
 							<File Id="TestPlugin" Name="TestPlugin.dll" Source="..\..\TestPlugin\bin\Debug\TestPlugin.dll"/>
-							<File Id="MediaInfoPlugin" Name="MediaInfoPlugin.dll" Source="..\..\thirdparty\MediaInfo\x64\MediaInfo.dll"/>
+							<File Id="MediaInfoPlugin" Name="MediaInfoPlugin.dll" Source="..\..\MediaInfoPlugin\bin\debug\MediaInfoPlugin.dll"/>
+							<File Id="MediaInfoDLL" Name="MediaInfo.dll" Source="..\..\thirdparty\MediaInfo\x64\MediaInfo.dll"/>
 							<CreateFolder />
 						<RegistryValue Root='HKCU' Key='SOFTWARE\Convendro\Convendro'  
 							    Type='string' Value='INSTALLED' KeyPath='yes' /> 							
