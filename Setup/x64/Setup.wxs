@@ -61,6 +61,13 @@
 				 <ComponentRef Id="MyFFCommandsFile"/>		
 		</Feature>		
 		
+		<Feature Id="SampleImportfiles"
+				Title="Sample Import Files"
+				Description="Optional SampleFiles"
+				Level="1"
+				ConfigurableDirectory="INSTALLDIR">
+				<ComponentRef Id="MySampleFiles"/>
+		</Feature>				
 		<!-- 
 			Using the Wix UI library
  

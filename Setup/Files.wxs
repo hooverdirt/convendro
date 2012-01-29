@@ -38,6 +38,11 @@
 					<Component Id="MyFFMPEG" Guid="F180E41A-6ABC-4498-8C29-848C68847586">
 							<File Id="FFMPEG" Name="ffmpeg.exe" Source="..\thirdparty\ffmpeg\x86\ffmpeg.exe"/>	
 					</Component>
+					<Component Id="MySampleFiles" Guid="50025A3C-1FB3-4B4D-AD6F-9C1A6733439B" DiskId="1">
+							<File Id="winff" Name="WinFF-Presets-Example.xml" Source="..\documents\WinFF-Presets-Example.xml"/>	
+							<File Id="videora1" Name="Videora-iPodTouch_1G.xml" Source="..\documents\Videora-iPodTouch_1G.xml"/>	
+							<File Id="videora2" Name="Videora-iPodTouch_2G.xml" Source="..\documents\Videora-iPodTouch_2G.xml"/>	
+					</Component>
 					<!-- Lib Convendro files -->
 					<Component Id="LibConvendro" Guid="0B2366EA-A9DF-4132-9347-0F6A7B0F758C">
 							<File Id="libconvendro" Name="libconvendro.dll" Source="..\libconvendro\bin\Debug\libconvendro.dll"/>	
