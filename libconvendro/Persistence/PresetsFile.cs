@@ -48,6 +48,8 @@ namespace libconvendro.Persistence {
                     presetslist.Add(p);
                 }
             }
+
+            this.Sort();
         }
 
         /// <summary>
