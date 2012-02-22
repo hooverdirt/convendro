@@ -88,7 +88,9 @@ namespace libconvendro.Threading {
                             synchTotalFloat();
 
                         } else {
-                            if (s.Contains("frame=")) {
+                            // Sound files don't have frame rates, so double check for 'size'
+                            // this may need to be cleaned up.
+                            if (s.Contains("frame=") || s.Contains("size=")) {
                                 string currents = Functions.ExtractTime(s);
                                 current = Functions.CurrentStringToSeconds(currents);
                                 synchCurrentFloat(current);
