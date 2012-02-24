@@ -72,8 +72,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)$(TargetFileName) %25LOCALAPPDATA%25\convendro\plugins\$(TargetFileName)
-call "$(SolutionDir)build\copystuff.bat" $(SolutionDir)</PostBuildEvent>
+    <PostBuildEvent>call "$(SolutionDir)build\copy64bitmediashit.bat" $(SolutionDir)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

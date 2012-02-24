@@ -630,6 +630,8 @@ namespace convendro {
                     }
                 } finally {
                     // Save commandline descriptions...
+                    // rebuild selection menu
+                    this.refreshPresetMenu();
                     nform.SaveDescriptionSettings(
                         Config.Settings.LastUsedCommandDescriptionFile);
                     nform.Dispose();
